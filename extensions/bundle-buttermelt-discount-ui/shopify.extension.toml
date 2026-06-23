@@ -1,0 +1,19 @@
+api_version = "2026-01"
+[[extensions]]
+# Change the merchant-facing name of the extension in locales/en.default.json
+name = "t:name"
+description = "t:description"
+handle = "bundle-buttermelt-discount-ui"
+uid = "1ad734fd-3c60-3cf8-41ec-8daa3de58bf870eab54f"
+type = "ui_extension"
+# Only 1 target can be specified for each Admin block extension
+[[extensions.targeting]]
+module = "./src/DiscountFunctionSettings.jsx"
+target = "admin.discount-details.function-settings.render"
+
+[[extensions.metafields]]
+namespace = "bundle-discount"
+key = "function-configuration"
+
+
+

@@ -1,0 +1,28 @@
+query CartInput {
+  cart {
+    lines {
+      id
+      quantity
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          product {
+            inCollections(ids: [
+              "gid://shopify/Collection/695155130738",
+              "gid://shopify/Collection/695155163506"
+            ]) {
+              collectionId
+              isMember
+            }
+          }
+        }
+      }
+    }
+  }
+  discount {
+    discountClasses
+    metafield(namespace: "bundle-discount", key: "function-configuration") {
+      value
+    }
+  }
+}
